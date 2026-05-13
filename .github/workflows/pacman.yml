@@ -7,13 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  generate:
     permissions:
       contents: write
 
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
       - uses: skp8500/PAC-CONTRIBUTIONS@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
